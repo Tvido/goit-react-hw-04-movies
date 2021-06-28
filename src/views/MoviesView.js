@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import MovieList from '../Components/MovieList';
 
 import axios from 'axios';
 
@@ -21,20 +21,11 @@ class MoviesView extends Component {
 
   render() {
     return (
-      <>
-        <ul>
-          <h1>THIS WEEK TOP RATED</h1>
+      <div>
+        <h1>THIS WEEK TOP RATED</h1>
 
-          {this.state.movies.map(movie => (
-            // <li key={movie.id}>{movie.title}</li>
-            <li key={movie.id}>
-              <NavLink to={`${this.props.match.url}/${movie.id}`} className="">
-                {movie.title}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </>
+        <MovieList movies={this.state.movies} />
+      </div>
     );
   }
 }
