@@ -20,6 +20,7 @@ class MovieDetailsView extends Component {
 
   async componentDidMount() {
     const API_KEY = '822df93417c2789fa5aa8e4d6553456b';
+
     const { movieId } = this.props.match.params;
 
     const response = await axios.get(
@@ -28,6 +29,7 @@ class MovieDetailsView extends Component {
 
     this.setState({ ...response.data });
   }
+
   render() {
     const {
       genres,
