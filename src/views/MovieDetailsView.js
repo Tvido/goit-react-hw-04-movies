@@ -59,7 +59,7 @@ class MovieDetailsView extends Component {
             )}
           </div>
 
-          <div className="MoviePage-block">
+          <div className="">
             <h1>
               {title}({date})
             </h1>
@@ -75,7 +75,7 @@ class MovieDetailsView extends Component {
           </div>
         </div>
 
-        <div className="MoviePage-menu">
+        <div className="">
           <h2>Additional information</h2>
 
           <ul>
@@ -83,7 +83,7 @@ class MovieDetailsView extends Component {
               <NavLink
                 to={`${match.url}/cast`}
                 className="NavLink"
-                activeClassName="NavLink-activ"
+                activeClassName="NavLink--active"
               >
                 Cast
               </NavLink>
@@ -92,7 +92,7 @@ class MovieDetailsView extends Component {
               <NavLink
                 to={`${match.url}/reviews`}
                 className="NavLink"
-                activeClassName="NavLink-activ"
+                activeClassName="NavLink--active"
               >
                 Reviews
               </NavLink>
