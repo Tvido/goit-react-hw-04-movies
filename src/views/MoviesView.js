@@ -10,7 +10,6 @@ class MoviesView extends Component {
 
   async componentDidMount() {
     const API_KEY = '822df93417c2789fa5aa8e4d6553456b';
-    // const trendingPeriod = 'day';
     const trendingPeriod = 'week';
 
     const response = await axios.get(
