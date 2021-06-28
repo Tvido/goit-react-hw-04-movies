@@ -26,12 +26,10 @@ class MovieDetailsView extends Component {
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`,
     );
 
-    // this.setState({ movie: response.data });
     this.setState({ ...response.data });
   }
   render() {
     const {
-      // movie,
       genres,
       id,
       title,
@@ -48,8 +46,6 @@ class MovieDetailsView extends Component {
     return (
       <>
         <div key={id} className="">
-          <h1>MOVIE DETAILS {this.props.match.params.movieId}</h1>
-
           <div className="">
             {poster_path ? (
               <img
@@ -84,7 +80,7 @@ class MovieDetailsView extends Component {
           <ul>
             <li>
               <NavLink
-                to={`${this.props.match.url}/cast`}
+                to={`${match.url}/cast`}
                 className="NavLink"
                 activeClassName="NavLink--active"
               >
@@ -93,7 +89,7 @@ class MovieDetailsView extends Component {
             </li>
             <li>
               <NavLink
-                to={`${this.props.match.url}/reviews`}
+                to={`${match.url}/reviews`}
                 className="NavLink"
                 activeClassName="NavLink--active"
               >

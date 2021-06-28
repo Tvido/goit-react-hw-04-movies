@@ -3,10 +3,9 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 // import axios from 'axios';
 
 import HomeView from './views/HomeView';
-import AuthorsView from './views/AuthorsView';
 import MoviesView from './views/MoviesView';
-import NotFoundView from './views/NotFoundView';
 import MovieDetailsView from './views/MovieDetailsView';
+import NotFoundView from './views/NotFoundView';
 
 import './App.css';
 
@@ -23,15 +22,6 @@ const App = () => (
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/authors"
-          className="NavLink"
-          activeClassName="NavLink--active"
-        >
-          Authors
-        </NavLink>
-      </li>
 
       <li>
         <NavLink
@@ -46,7 +36,6 @@ const App = () => (
 
     <Switch>
       <Route exact path="/" component={HomeView} />
-      <Route path="/authors" component={AuthorsView} />
       <Route exact path="/movies" component={MoviesView} />
       <Route path="/movies/:movieId" component={MovieDetailsView} />
       <Route component={NotFoundView} />
