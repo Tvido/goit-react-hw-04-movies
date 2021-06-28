@@ -28,7 +28,10 @@ class HomeView extends Component {
           {this.state.moviesTrend.map(movie => (
             // <li key={movie.id}>{movie.title}</li>
             <li key={movie.id}>
-              <NavLink to={`/movies/${movie.id}`} className="MovieLink">
+              <NavLink
+                to={`${this.props.match.url}/${movie.id}`}
+                className="MovieLink"
+              >
                 {movie.title}
               </NavLink>
             </li>

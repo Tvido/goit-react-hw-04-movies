@@ -6,6 +6,7 @@ import HomeView from './views/HomeView';
 import AuthorsView from './views/AuthorsView';
 import MoviesView from './views/MoviesView';
 import NotFoundView from './views/NotFoundView';
+import MovieDetailsView from './views/MovieDetailsView';
 
 import './App.css';
 
@@ -46,7 +47,8 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={HomeView} />
       <Route path="/authors" component={AuthorsView} />
-      <Route path="/movies" component={MoviesView} />
+      <Route exact path="/movies" component={MoviesView} />
+      <Route path="/movies/:movieId" component={MovieDetailsView} />
       <Route component={NotFoundView} />
     </Switch>
   </>
