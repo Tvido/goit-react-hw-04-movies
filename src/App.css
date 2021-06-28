@@ -16,3 +16,14 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+.NavLink {
+  display: flex;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 23px;
+}
+
+.NavLink--active {
+  color: red;
+}
