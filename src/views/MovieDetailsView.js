@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom';
 
+import Cast from '../Components/Cast';
+import Reviews from '../Components/Reviews';
+
 import axios from 'axios';
 
 class MovieDetailsView extends Component {
@@ -81,7 +84,7 @@ class MovieDetailsView extends Component {
           <ul>
             <li>
               <NavLink
-                to={`${match.url}/cast`}
+                to={`${this.props.match.url}/cast`}
                 className="NavLink"
                 activeClassName="NavLink--active"
               >
@@ -90,7 +93,7 @@ class MovieDetailsView extends Component {
             </li>
             <li>
               <NavLink
-                to={`${match.url}/reviews`}
+                to={`${this.props.match.url}/reviews`}
                 className="NavLink"
                 activeClassName="NavLink--active"
               >
@@ -98,6 +101,12 @@ class MovieDetailsView extends Component {
               </NavLink>
             </li>
           </ul>
+
+          <Switch>
+            <Route exact path={`${match.path}/cast`} component={Cast} />
+
+            <Route exact path={`${match.path}/reviews`} component={Reviews} />
+          </Switch>
         </div>
       </>
     );
