@@ -11,7 +11,7 @@ const Navigation = () => {
         className="NavLink"
         activeClassName="NavLink--active"
       >
-        Home
+        HOME
       </NavLink>
 
       <NavLink
@@ -19,7 +19,15 @@ const Navigation = () => {
         className="NavLink"
         activeClassName="NavLink--active"
       >
-        MoviesView
+        WEEK TOP RATED
+      </NavLink>
+
+      <NavLink
+        to={routes.searchBar}
+        className="NavLink"
+        activeClassName="NavLink--active"
+      >
+        SEARCH
       </NavLink>
     </nav>
   );

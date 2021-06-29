@@ -18,6 +18,10 @@ const MoviesView = lazy(() =>
   import('./views/MoviesView.js' /*webpackChunkName *movies-view**/),
 );
 
+const SearchBar = lazy(() =>
+  import('./views/SearchBarView.js' /*webpackChunkName *search-bar-view**/),
+);
+
 const MovieDetailsView = lazy(() =>
   import(
     './views/MovieDetailsView.js' /*webpackChunkName *movie-details-view**/
@@ -32,7 +36,9 @@ const App = () => (
       <Switch>
         <Route exact path={routes.home} component={HomeView} />
         <Route exact path={routes.moviesView} component={MoviesView} />
+        <Route path={routes.searchBar} component={SearchBar} />
         <Route path={routes.movieDetailsView} component={MovieDetailsView} />
+
         {/* <Route component={NotFoundView} /> */}
       </Switch>
     </Suspense>

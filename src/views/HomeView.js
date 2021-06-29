@@ -10,7 +10,7 @@ class HomeView extends Component {
 
   async componentDidMount() {
     const API_KEY = '822df93417c2789fa5aa8e4d6553456b';
-    const trendingPeriod = 'week';
+    const trendingPeriod = 'day';
 
     const response = await axios.get(
       `https://api.themoviedb.org/3/trending/movie/${trendingPeriod}?api_key=${API_KEY}`,
@@ -22,7 +22,7 @@ class HomeView extends Component {
   render() {
     return (
       <>
-        <h1>THIS WEEK TOP RATED</h1>
+        <h1>THIS DAY TOP RATED</h1>
         <ul className="MovieList">
           {this.state.moviesTrend.map(({ id, poster_path, title }) => (
             // <li key={movie.id}>{movie.title}</li>

@@ -10,7 +10,7 @@ class MoviesView extends Component {
 
   async componentDidMount() {
     const API_KEY = '822df93417c2789fa5aa8e4d6553456b';
-    const trendingPeriod = 'day';
+    const trendingPeriod = 'week';
 
     const response = await axios.get(
       `https://api.themoviedb.org/3/trending/movie/${trendingPeriod}?api_key=${API_KEY}`,
@@ -22,7 +22,7 @@ class MoviesView extends Component {
   render() {
     return (
       <div>
-        <h1>THIS DAY TOP RATED</h1>
+        <h1>THIS WEEK TOP RATED</h1>
 
         <MovieList movies={this.state.movies} />
       </div>
