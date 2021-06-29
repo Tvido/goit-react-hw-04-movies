@@ -37,7 +37,7 @@ class SearchView extends Component {
   render() {
     return (
       <>
-        <h1>SearchBar</h1>
+        {/* <h1>SearchBar</h1> */}
         <SearchBar onSubmit={this.onChangeQuery} />
 
         <ul className="">
