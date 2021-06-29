@@ -4,6 +4,8 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 import Cast from '../Components/Cast';
 import Reviews from '../Components/Reviews';
 
+// import routes from '../routes';
+
 import axios from 'axios';
 
 class MovieDetailsView extends Component {
@@ -30,6 +32,16 @@ class MovieDetailsView extends Component {
     this.setState({ ...response.data });
   }
 
+  handleGoBack = () => {
+    const { location, history } = this.props;
+
+    // history.push(location?.state?.from || routes.movies);
+
+    if (location.state && location.state.from) {
+      return history.push(location.state.from);
+    }
+  };
+
   render() {
     const {
       genres,
@@ -46,7 +58,11 @@ class MovieDetailsView extends Component {
     const date = `${release_date}`.substr(0, 4);
 
     return (
-      <>
+      <div>
+        <button type="button" onClick={this.handleGoBack}>
+          Go Back
+        </button>
+
         <div key={id} className="">
           <div className="">
             {poster_path ? (
@@ -106,7 +122,7 @@ class MovieDetailsView extends Component {
             <Route exact path={`${match.path}/reviews`} component={Reviews} />
           </Switch>
         </div>
-      </>
+      </div>
     );
   }
 }
