@@ -58,8 +58,8 @@ class MovieDetailsView extends Component {
     const date = `${release_date}`.substr(0, 4);
 
     return (
-      <div>
-        <button type="button" onClick={this.handleGoBack}>
+      <div className="">
+        <button type="button" className="Button" onClick={this.handleGoBack}>
           Go Back
         </button>
 
