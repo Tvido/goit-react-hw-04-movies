@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-
 import axios from 'axios';
+import MoviePreview from '../Components/MoviePreview';
 
 class HomeView extends Component {
   state = {
@@ -10,7 +10,7 @@ class HomeView extends Component {
 
   async componentDidMount() {
     const API_KEY = '822df93417c2789fa5aa8e4d6553456b';
-    const trendingPeriod = 'day';
+    const trendingPeriod = 'week';
 
     const response = await axios.get(
       `https://api.themoviedb.org/3/trending/movie/${trendingPeriod}?api_key=${API_KEY}`,
@@ -22,14 +22,17 @@ class HomeView extends Component {
   render() {
     return (
       <>
-        <ul>
-          <h1>THIS DAY TOP RATED</h1>
-
-          {this.state.moviesTrend.map(movie => (
+        <h1>THIS WEEK TOP RATED</h1>
+        <ul className="MovieList">
+          {this.state.moviesTrend.map(({ id, poster_path, title }) => (
             // <li key={movie.id}>{movie.title}</li>
-            <li key={movie.id}>
-              <NavLink to={`${this.props.match.url}/${movie.id}`} className="">
-                {movie.title}
+            <li key={id}>
+              <NavLink to={`${this.props.match.url}/${id}`} className="">
+                {/* {movie.title} */}
+                <MoviePreview
+                  poster_path={`https://image.tmdb.org/t/p/w300${poster_path}`}
+                  title={title}
+                />
               </NavLink>
             </li>
           ))}
