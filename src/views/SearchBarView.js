@@ -30,14 +30,12 @@ class SearchView extends Component {
     const response = await axios.get(
       ` https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${movieQuery}`,
     );
-    // console.log(response.data.results);
     this.setState({ movies: response.data.results });
   }
 
   render() {
     return (
       <>
-        {/* <h1>SearchBar</h1> */}
         <SearchBar onSubmit={this.onChangeQuery} />
 
         <ul className="">

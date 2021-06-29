@@ -25,7 +25,6 @@ class HomeView extends Component {
         <h1>THIS DAY TOP RATED</h1>
         <ul className="MovieList">
           {this.state.moviesTrend.map(({ id, poster_path, title }) => (
-            // <li key={movie.id}>{movie.title}</li>
             <li key={id}>
               {/* <NavLink to={`${this.props.match.url}/${id}`} className=""> */}
               <NavLink
@@ -35,7 +34,6 @@ class HomeView extends Component {
                 }}
                 className=""
               >
-                {/* {movie.title} */}
                 <MoviePreview
                   poster_path={`https://image.tmdb.org/t/p/w300${poster_path}`}
                   title={title}
