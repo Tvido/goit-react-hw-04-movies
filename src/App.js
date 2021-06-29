@@ -6,7 +6,7 @@ import AppBar from './Components/AppBar';
 // import HomeView from './views/HomeView';
 // import MoviesView from './views/MoviesView';
 // import MovieDetailsView from './views/MovieDetailsView';
-// import NotFoundView from './views/NotFoundView';
+import NotFoundView from './views/NotFoundView';
 
 import './App.css';
 
@@ -39,7 +39,7 @@ const App = () => (
         <Route path={routes.searchBar} component={SearchBar} />
         <Route path={routes.movieDetailsView} component={MovieDetailsView} />
 
-        {/* <Route component={NotFoundView} /> */}
+        <Route component={NotFoundView} />
       </Switch>
     </Suspense>
   </>
