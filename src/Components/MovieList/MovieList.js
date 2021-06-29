@@ -6,7 +6,7 @@ import '../../App.css';
 
 const MovieList = ({ movies, match, location }) => {
   return (
-    <ul className="MovieList">
+    <ul className="MovieList ">
       {movies.map(({ id, poster_path, title }) => (
         <li key={id}>
           <NavLink
